@@ -1,4 +1,4 @@
-let ajd = "02/03/1997";
+let ajd = "24/02/2042";
 
 //je stocke le jour/mois/année dans des variables en number
 let ajdDay = parseInt(ajd.slice(0, 2));
@@ -156,4 +156,26 @@ function getNextDate(anyDate) {
   return nextDate;
 }
 
-console.log(getNextPalindrome(currentDate));
+//console.log(getNextPalindrome(currentDate));
+
+function isPalindrome2 (str){
+  let strReverse = ReverseString(str);
+  if (str == strReverse) {
+    return true;
+  } else {
+    return false;
+  }
+}
+
+console.log(isPalindrome2("05022050"));
+
+function isDatePalindrome(ajd){
+  if (isValideDate(ajdDay, ajdMonth, ajdYear)) {
+    let dayEndroit = ajd.replace(/\//g, "");
+    return isPalindrome2(dayEndroit);
+  } else {
+    return "not a valide date.";
+  }
+}
+
+console.log(isDatePalindrome(ajd));
